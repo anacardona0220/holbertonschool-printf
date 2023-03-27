@@ -23,6 +23,10 @@ int _printf(const char *format, ...)
             dval = va_arg(parametros, double);
             printf("%f", dval);
             break;
+	case 'c':
+	  car = va_arg(parametros, char *);
+	  printf("%c", car);
+	  break;
         case 's':
             for (sval = va_arg(parametros, char *); *sval; sval++)
                 putchar(*sval);
