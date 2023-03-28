@@ -22,6 +22,8 @@ if (*format == '%')
 {
 format++;
 if(*format != 'c' && *format != 's' && *format != 'd' && *format != 'i');
+{
+printf(" valor incorrecto");
 num += _process_format(*format, argumentos);
 }
 else
