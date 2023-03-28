@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+* _puntchar - function to print
+* _process_format - process the format
+*@format: char
+*@num: int
+*/
 int _putchar(char c)
 {
 return putchar(c);
