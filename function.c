@@ -30,7 +30,7 @@ case 'i':
 num += printf("%i", va_arg(argumentos, int));
 break;
 case '%':
-num += printf("%%", format);
+num += printf("\%", format);
 break;
 default: 
 fprintf("formato incorrecto: %c\n", format);    
