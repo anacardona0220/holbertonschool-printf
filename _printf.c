@@ -1,6 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
-#include "main.h"
+#include "main."
 /**
 * _printf - a function that produces output according to a format
 * _puntchar - function to print
@@ -32,4 +32,4 @@ format++;
 }
 va_end(argumentos);
 return (num);
-}
+}                                                       
