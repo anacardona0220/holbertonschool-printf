@@ -21,8 +21,6 @@ while (*format != '\0')
 if (*format == '%')
 {
 format++;
-  
-  if(*format !='d' && *format !='c' && *format !='s' && *format !='f' && *format !='i' && *format !='%'){
 num += _process_format(*format, argumentos);
 }
 else
@@ -34,5 +32,4 @@ format++;
 }
 va_end(argumentos);
 return (num);
-}
 }
