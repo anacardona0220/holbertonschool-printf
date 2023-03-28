@@ -33,6 +33,6 @@ default:
 printf("Formato es : %c\n", format);
 return -1;
 }
-return num;
+return (num);
 }
 
