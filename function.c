@@ -12,6 +12,12 @@ return putchar(c);
 int _process_format(char format, va_list argumentos)
 {
 int num = 0;
+if (format != 'd' && format != 'i' && format != 's' && format != 'f' && format != 'c' && format != '%')
+{
+num += printf("%c", format);
+}
+else
+{
 switch (format)
 {
 case 'd':
@@ -29,12 +35,9 @@ break;
 case 'i':
 num += printf("%i", va_arg(argumentos, int));
 break;
-case '%':
-num += printf("%c", format);
-break;
 default:
 return -1;
 }
 return (num);
 }
-
+}
