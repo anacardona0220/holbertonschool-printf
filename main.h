@@ -35,4 +35,4 @@ return -1;
 }
 return num;
 }
-int _printf(const char *format, ...);
+
