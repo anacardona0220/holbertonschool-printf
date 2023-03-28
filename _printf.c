@@ -2,12 +2,11 @@
 #include <stdio.h>
 #include "main.h"
 /**
-* _printf: a function that produces output according to a format
+* _printf - a function that produces output according to a format
 * _puntchar - function to print
 * _process_format - process the format
 *@format: char
-*@num: int
-*description - function that produces output according to a format 
+*description - function that produces output according to a format
 *Return: 0;
 */
 int _printf(const char *format, ...)
