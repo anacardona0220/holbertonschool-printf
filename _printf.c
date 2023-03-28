@@ -25,9 +25,9 @@ else
 {
 _putchar(*format);
 num++;
- }
- format++;
- }
+}
+format++;
+}
 va_end(argumentos);
 return (num);
 }
