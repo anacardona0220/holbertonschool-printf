@@ -33,6 +33,7 @@ case '%':
 num += printf("%c", format);
 break;
 default: 
+printf("formato incorrecto: %c\n", format);    
 return -1;
 }
 return (num);
