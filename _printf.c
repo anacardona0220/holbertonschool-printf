@@ -7,6 +7,7 @@
 * _process_format - process the format
 *@format: char
 *@num: int
+*Return: 0;
 */
 int _printf(const char *format, ...)
 {
