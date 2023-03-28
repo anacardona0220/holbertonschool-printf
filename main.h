@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdarg.h>
-/*_puntchar - function to print
- *_process_format - process the format
- *@format: char
+/*
+* _puntchar - function to print
+* _printf - funtion printf
+*_process_format - process the format
+*@format: char
 */
-
+int _printf(const char *format, ...);
 int _putchar(char c)
 {
 return putchar(c);
