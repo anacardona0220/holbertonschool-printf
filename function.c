@@ -33,6 +33,6 @@ default:
 fprintf(stderr, "Formato inválido: %c\n", format);
 return -1;
 }
-return num;
+return (num);
 }
 
