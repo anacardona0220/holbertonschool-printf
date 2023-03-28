@@ -1,7 +1,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
-/*
+/**
 * _printf: a function that produces output according to a format
 * _puntchar - function to print
 * _process_format - process the format
