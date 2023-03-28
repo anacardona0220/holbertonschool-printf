@@ -1,7 +1,8 @@
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
-/*_puntchar - function to print
+/*
+*_puntchar - function to print
 *_process_format - process the format
 *@format: char
 *@num: int
@@ -23,7 +24,7 @@ num += _process_format(*format, argumentos);
 else
 {
 _putchar(*format);
- num++;
+num++;
  }
  format++;
  }
