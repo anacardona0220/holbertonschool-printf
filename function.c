@@ -12,7 +12,7 @@ return putchar(c);
 int _process_format(char format, va_list argumentos)
 {
 int num = 0;
-if (format != 'd' && format != 'i' && format != 's' && format != 'f' && format != 'c' && format != '%')
+if (format != 'd' && format != 'i' && format != 's' && format != 'f' && format != 'c')
 {
 num += printf("%c", format);
 }
