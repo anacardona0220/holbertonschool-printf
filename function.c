@@ -33,11 +33,11 @@ case 'c':
 num += printf("%c", va_arg(argumentos, char *));
 break;
 case 'i':
-num += printf("%i", va_arg(argumentos, int));
+case '%':
+num += printf("%c", format);
 break;
 default:
 return -1;
 }
 return (num);
-}
 }
