@@ -39,6 +39,7 @@ case '%':
 num += printf("%c", format);
 break;
 default:
+printf("valor invalido");
 return -1;
 }
 return (num);
