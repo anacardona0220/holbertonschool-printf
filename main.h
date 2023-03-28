@@ -5,7 +5,6 @@
 *_process_format - process the format
 *@format: char
 */
-int _printf(const char *format, ...);
 int _putchar(char c)
 {
 return putchar(c);
@@ -36,3 +35,4 @@ return -1;
 }
 return num;
 }
+int _printf(const char *format, ...);
