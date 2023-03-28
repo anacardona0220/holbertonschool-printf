@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include "main.h"
 /*_puntchar - function to print
- *_process_format - process the format
- *@format: char
- *@num: int
+*_process_format - process the format
+*@format: char
+*@num: int
 */
 int _printf(const char *format, ...)
 {
