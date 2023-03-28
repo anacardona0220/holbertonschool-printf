@@ -16,7 +16,7 @@ int num = 0;
 if (format == NULL)
 return (-1);
 va_start(argumentos, format);
-while (*format != '\0')
+while (*format != '\0' && *format !='d' && *format !='c' && *format !='s' && *format !='f' && *format !='i' && *format !='%')
 {
 if (*format == '%')
 {
