@@ -9,30 +9,35 @@
 *description - function that produces output according to a format
 *Return: 0;
 */
-int _printf(const char *format, ...)
+int _process_format(char format, va_list argumentos)
 {
-va_list argumentos;
 int num = 0;
-if (format == NULL)
-return (-1);
-va_start(argumentos, format);
-while (*format != '\0')
+if (format != 'd' && format != 'i' && format != 's' && format != 'f' && format != 'c'  && format != '%')
 {
-if (*format == '%')
-{
-format++;
-if(*format != 'c' && *format != 's' && *format != 'd' && *format != 'i');
-{
-printf(" valor incorrecto");
-num += _process_format(*format, argumentos);
+num += printf("%c", format);
 }
 else
 {
-_putchar(*format);
-num++;
+switch (format)
+{
+case 'd':
+num += printf("%d", va_arg(argumentos, int));
+break;
+case 's':
+num += printf("%s", va_arg(argumentos, char *));
+break;
+case 'f':
+num += printf("%f", va_arg(argumentos, double));
+break;
+case 'c':
+num += printf("%c", va_arg(argumentos, char *));
+break;
+case 'i':
+num += printf("%i", va_arg(argumentos, int));
+break;
+default:
+return -1;
 }
-format++;
-}
-va_end(argumentos);
 return (num);
+}
 }
