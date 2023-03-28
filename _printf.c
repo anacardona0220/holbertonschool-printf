@@ -32,4 +32,4 @@ format++;
 }
 va_end(argumentos);
 return (num);
-}                                                       
+}
