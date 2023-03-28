@@ -29,8 +29,11 @@ break;
 case 'i':
 num += printf("%i", va_arg(argumentos, int));
 break;
+case '%':
+num += printf("%%", va_arg(argumentos, char));
+break;
 default:
-printf("Formato es : %c\n", format);
+printf("Formato invalido");
 return -1;
 }
 return (num);
