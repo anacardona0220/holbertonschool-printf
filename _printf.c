@@ -17,6 +17,11 @@ int num = 0;
 if (format == NULL)
 return (-1);
 va_start(argumentos, format);
+if (*format == 0)
+{
+num = -1;
+return (num);
+}
 while (*format != '\0')
 {
 if (*format == '%')
