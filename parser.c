@@ -11,7 +11,7 @@
  * @arg_list: A list containing all the argumentents passed to the program.
  * Return: A total count of the characters printed.
  */
-iint parser(const char *format, data_t fn[], va_list arg_list)
+int parser(const char *format, changing_t fn[], va_list arg_list)
 {
 int i, k, valor, caracter_p;
 caracter_p = 0;
