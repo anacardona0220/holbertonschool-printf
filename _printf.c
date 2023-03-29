@@ -8,19 +8,21 @@
  */
 int _printf(const char *format, ...)
 {
-int num; changing_t fn[] = {
-{"c", p_c},
-{"s", p_s},
-{"%", p_p},
-{"d", p_d_i},
-{"i", p_d_i},
+int printed_chars;
+changing_t f_list[] = {
+{"c", print_char},
+{"s", print_string},
+{"%", print_percent},
+{"d", print_decimal_integer},
+{"i", print_decimal_integer},
 {NULL, NULL}
 };
-va_list arguments;
+va_list arg_list;
 if (format == NULL)
 return (-1);
-va_start(arguments, format);
-num = parser(format, fn, arguments);
-va_end(arguments);
-return (num);
+va_start(arg_list, format);
+printed_chars = parser(format, f_list, arg_list);
+va_end(arg_list);
+return (printed_chars);
 }
+
