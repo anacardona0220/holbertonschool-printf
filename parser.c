@@ -11,43 +11,43 @@
  * @arg_list: A list containing all the argumentents passed to the program.
  * Return: A total count of the characters printed.
  */
-int parser(const char *format, changing_t fn[], va_list arg_list)
+int parser(const char *format, changing_t f_list[], va_list arg_list)
 {
-int i, k, valor, caracter_p;
-caracter_p = 0;
+int i, j, r_val, printed_chars;
+printed_chars = 0;
 for (i = 0; format[i] != '\0'; i++)
 {
 if (format[i] == '%') 
 {
-for (k = 0; fn[k].tipo != NULL; k++)
+for (j = 0; f_list[j].rm != NULL; j++)
 {
-if (format[i + 1] == fn[k].tipo[0])
+if (format[i + 1] == f_list[j].rm[0])
 {
-valor = fn[k].f(arg_list);
-if (valor == -1)
+r_val = f_list[j].f(arg_list);
+if (r_val == -1)
 return (-1);
-caracter_p += valor;
+printed_chars += r_val;
 break;
 }
 }
-if (fn[k].tipo == NULL && format[i + 1] != ' ')
+if (f_list[j].rm == NULL && format[i + 1] != ' ')
 {
 if (format[i + 1] != '\0')
 {
 _putcharf(format[i]);
 _putcharf(format[i + 1]);
-caracter_p = caracter_p + 2;
+printed_chars = printed_chars + 2;
 }
 else
 return (-1);
 }
-i = i + 1; 
+i = i + 1; /*Updating i to skip format symbols*/
 }
 else
 {
-_putcharf(format[i]); 
-caracter_p++;
+_putcharf(format[i]); /*call the write function*/
+printed_chars++;
 }
 }
-return (caracter_p);
+return (printed_chars);
 }
