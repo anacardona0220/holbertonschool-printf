@@ -16,7 +16,7 @@ int nLength;
 nLength = p_d(list);
 return (nLength);
 }
-int p_d(va_list args)
+int print_numberDI(va_list args)
 {
 int n, length, div;
 unsigned int num;
@@ -43,11 +43,6 @@ num %= div;
 div /= 10;
 }
 return (length);
-}
-int p_c(va_list list)
-{
-_putcharf(va_arg(list, int));
-return (1);
 }
 int p_s(va_list list)
 {
