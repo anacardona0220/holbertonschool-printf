@@ -25,7 +25,7 @@ div = 1;
 length = 0;
 if (n < 0)
 {
-length += _putchar('-');
+length += _putcharb('-');
 num = n * -1;
 }
 else
@@ -38,7 +38,7 @@ div *= 10;
 }
 for (; div != 0;)
 {
-length += _putchar('0' + num / div);
+length += _putcharb('0' + num / div);
 num %= div;
 div /= 10;
 }
@@ -52,12 +52,12 @@ str = va_arg(list, char *);
 if (str == NULL)
 str = "(null)";
 for (i = 0; str[i] != '\0'; i++)
-_putchar(str[i]);
+_putcharb(str[i]);
 return (i);
 }
 int p_p(__attribute__((unused))va_list list)
 {
-_putchar('%');
+_putcharb('%');
 return (1);
 }
 
