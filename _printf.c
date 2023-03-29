@@ -8,6 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
+<<<<<<< HEAD
     va_list args;
     int i = 0, j = 0, count = 0;
     format_t f_list[] = {
@@ -20,33 +21,47 @@ int _printf(const char *format, ...)
     };
   va_start(args, format);
  while (format && format[i])
+=======
+va_list args;
+int i = 0, j = 0, count = 0;
+format_t f_list[] = {
+{"c", print_char},
+{"s", print_str},
+{"%", print_percent},
+{"i", print_int},
+{"d", print_int},
+{"u", print_unsigned},
+{NULL, NULL}
+};
+va_start(args, format);
+while (format && format[i])
+>>>>>>> e65d30970a161ae61aa1be43dadbf59da3059424
 {
-        if (format[i] == '%')
-        {
-            j = 0;
-            while (f_list[j].type)
-            {
-                if (format[i + 1] == f_list[j].type[0])
-                {
-                    count += f_list[j].func(args);
-                    i++;
-                    break;
-                }
-                j++;
-            }
-            if (!f_list[j].type)
-            {
-                putchar(format[i]);
-                count++;
-            }
-        }
-        else
-        {
-            putchar(format[i]);
-            count++;
+if (format[i] == '%')
+{
+j = 0;
+while (f_list[j].type)
+{
+if (format[i + 1] == f_list[j].type[0])
+{
+count += f_list[j].func(args);
+i++;
+break;
+j++;
 }
-        i++;
-    }
- va_end(args);
-    return (count);
+if (!f_list[j].type)
+{
+putchar(format[i]);
+count++;
+}
+}
+else
+{
+putchar(format[i]);
+count++;
+}
+i++;
+}
+va_end(args);
+return (count);
 }
