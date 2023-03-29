@@ -13,7 +13,7 @@
 int p_d_i(va_list list)
 {
 int nLength;
-nLength = p_d(list);
+nLength = print_numberDI(list);
 return (nLength);
 }
 int print_numberDI(va_list args)
