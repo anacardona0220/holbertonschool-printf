@@ -25,17 +25,22 @@ case 'f':
 num += printf("%f", va_arg(argumentos, double));
 break;
 case 'c':
+<<<<<<< HEAD
 num += printf("%c", va_arg(argumentos, int));
+=======
+num += printf("%c", va_arg(argumentos, char *));
+>>>>>>> 15608fbea5d66aa8df1109767f2b1d7ca879cf41
 break;
 case 'i':
 num += printf("%i", va_arg(argumentos, int));
 break;
-case '%':
-num += printf("%%", format);
-break;
 default:
+<<<<<<< HEAD
 _putchar(37);
 _putchar(format);
+=======
+fprintf(stderr "formato invalido : %c/n", format);
+>>>>>>> 15608fbea5d66aa8df1109767f2b1d7ca879cf41
 return -1;
 }
 return (num);
