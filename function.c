@@ -1,44 +1,79 @@
 #include "main.h"
+#include <stdarg.h>
 #include <stdio.h>
 /**
-* _puntchar - function to print
-* _process_format - process the format
-*@format: char
-*@num: int
-*/
-int _putchar(char c)
+ * print_char - prints a character
+ * @arg: character to print
+ * Return: 1
+ */
+int print_char(va_list arg)
 {
-return putchar(c);
+    char c = va_arg(arg, int);
+
+    putchar(c);
+    return (1);
 }
-int _process_format(char format, va_list argumentos)
+
+/**
+ * print_str - prints a string
+ * @arg: string to print
+ * Return: number of characters printed
+ */
+int print_str(va_list arg)
 {
-int num = 0;
-switch (format)
+    char *str = va_arg(arg, char *);
+    int i = 0;
+
+    if (str == NULL)
+        str = "(null)";
+
+    while (str[i])
+    {
+        putchar(str[i]);
+        i++;
+    }
+
+    return (i);
+}
+
+/**
+ * print_percent - prints a percent symbol
+ * @arg: percent symbol to print
+ * Return: 1
+ */
+int print_percent(__attribute__((unused))va_list arg)
 {
-case 'd':
-num += printf("%d", va_arg(argumentos, int));
-break;
-case 's':
-num += printf("%s", va_arg(argumentos, char *));
-break;
-case 'f':
-num += printf("%f", va_arg(argumentos, double));
-break;
-case 'c':
-num += printf("%c", va_arg(argumentos, char *));
-break;
-case 'i':
-num += printf("%i", va_arg(argumentos, int));
-break;
-case '%':
-_putchar(37);
-break;
-case ' ':
-return (-1);
-break;
-default:
-_putchar(format);
-return -1;
+    putchar('%');
+    return (1);
 }
-return (num);
+/**
+ * print_int - prints an integer
+ * @arg: integer to print
+ * Return: number of characters printed
+ */
+int print_int(va_list arg)
+{
+	int n = va_arg(arg, int);
+	int div = 1, len = 0;
+
+	if (n < 0)
+	{
+		len += _putchar('-');
+		if (n == INT_MIN)
+		{
+			_write("2147483648", 10);
+			return (10);
+		}
+		n = -n;
+	}
+	while (n / div >= 10)
+		div *= 10;
+	while (div != 0)
+	{
+		len += _putchar('0' + n / div);
+		n %= div;
+		div /= 10;
+	}
+	return (len);
 }
+
