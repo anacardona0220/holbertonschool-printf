@@ -8,9 +8,8 @@
  */
 int _printf(const char *format, ...)
 {
-<<<<<<< HEAD
-    va_list args;
-    int i = 0, j = 0, count = 0;
+va_list args;
+int i = 0, j = 0, count = 0;
     format_t f_list[] = {
         {"c", print_char},
         {"s", print_str},
@@ -21,7 +20,7 @@ int _printf(const char *format, ...)
     };
   va_start(args, format);
  while (format && format[i])
-=======
+
 va_list args;
 int i = 0, j = 0, count = 0;
 format_t f_list[] = {
@@ -35,7 +34,7 @@ format_t f_list[] = {
 };
 va_start(args, format);
 while (format && format[i])
->>>>>>> e65d30970a161ae61aa1be43dadbf59da3059424
+
 {
 if (format[i] == '%')
 {
