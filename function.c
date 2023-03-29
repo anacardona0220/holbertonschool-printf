@@ -25,10 +25,13 @@ case 'f':
 num += printf("%f", va_arg(argumentos, double));
 break;
 case 'c':
-num += printf("%c", va_arg(argumentos, int));
+num += printf("%c", va_arg(argumentos, char *));
 break;
 case 'i':
 num += printf("%i", va_arg(argumentos, int));
+break;
+case '%':
+_putchar(37);
 break;
 default:
 _putchar(37);
