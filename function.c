@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
 * _puntchar - function to print
 * _process_format - process the format
@@ -24,7 +25,7 @@ case 'f':
 num += printf("%f", va_arg(argumentos, double));
 break;
 case 'c':
-num += printf("%c", va_arg(argumentos, char));
+num += printf("%c", va_arg(argumentos, int));
 break;
 case 'i':
 num += printf("%i", va_arg(argumentos, int));
@@ -33,6 +34,8 @@ case '%':
 num += printf("%%", format);
 break;
 default:
+_putchar(37);
+_putchar(format);
 return -1;
 }
 return (num);
