@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * struct format - Struct format
@@ -11,8 +12,8 @@
  */
 typedef struct format
 {
-    char *type;
-    int (*func)(va_list);
+char *type;
+int (*func)(va_list);
 } format_t;
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -20,10 +21,5 @@ int print_char(va_list arg);
 int print_str(va_list arg);
 int print_percent(va_list arg);
 int print_int(va_list arg);
-int print_unsigned(va_list arg);
-int print_octal(va_list arg);
-int print_hex(va_list arg);
-int print_HEX(va_list arg);
-int print_binary(va_list arg);
 
 #endif
