@@ -6,16 +6,18 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
+
 typedef struct changing
 {
-char *tipo;
+char *rm;
 int (*f)(va_list);
 } changing_t;
+
 int _putcharf(char c);
-int parser(const char *format, changing_t fn[], va_list arg_list);
+int parser(const char *format, changing_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
-int p_c(va_list);
-int p_s(va_list);
-int p_p(va_list);
-int p_d_i(va_list);
+int print_char(va_list);
+int print_string(va_list);
+int print_percent(va_list);
+int print_decimal_integer(va_list);
 #endif
