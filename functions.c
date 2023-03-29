@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include "main.h"
 /**
  * print_numberDI - its used to print integer and decimal
  * @args: parameter

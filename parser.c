@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include "main.h"
 /**
  * parser - Receives the main string and all the necessary parameters to
  * print a formated string.
@@ -41,7 +42,7 @@ printed_chars = printed_chars + 2;
 else
 return (-1);
 }
-i = i + 1; /*Updating i to skip format symbols*/
+i = i + 1;
 }
 else
 {
