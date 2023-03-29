@@ -1,41 +1,57 @@
-#include <limits.h>
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 #include <stdarg.h>
 /**
-* _printf - a function that produces output according to a format
-* _puntchar - function to print
-* _process_format - process the format
-*@format: char
-*description - function that produces output according to a format
-*Return: 0;
-*/
+ * _printf - produces output according to a format.
+ * @format: character string
+ * Return: number of characters printed (excluding the null byte used to end output to strings)
+ */
 int _printf(const char *format, ...)
 {
-va_list argumentos;
-int num = 0;
-if (format == NULL)
-return (-1);
-va_start(argumentos, format);
-if (*format == 0)
+    va_list args;
+    int i = 0, j = 0, count = 0;
+    format_t f_list[] = {
+        {"c", print_char},
+        {"s", print_str},
+        {"%", print_percent},
+        {"i", print_int},
+        {"d", print_int},
+        {"u", print_unsigned},
+        {"o", print_octal},
+        {"x", print_hex},
+        {"X", print_HEX},
+        {"b", print_binary},
+        {NULL, NULL}
+    };
+  va_start(args, format);
+ while (format && format[i])
 {
-num = -1;
-return (num);
+        if (format[i] == '%')
+        {
+            j = 0;
+            while (f_list[j].type)
+            {
+                if (format[i + 1] == f_list[j].type[0])
+                {
+                    count += f_list[j].func(args);
+                    i++;
+                    break;
+                }
+                j++;
+            }
+            if (!f_list[j].type)
+            {
+                putchar(format[i]);
+                count++;
+            }
+        }
+        else
+        {
+            putchar(format[i]);
+            count++;
 }
-while (*format != '\0')
-{
-if (*format == '%')
-{
-format++;
-num += _process_format(*format, argumentos);
-}
-else
-{
-_putchar(*format);
-num++;
-}
-format++;
-}
-va_end(argumentos);
-return (num);
+        i++;
+    }
+ va_end(args);
+    return (count);
 }
