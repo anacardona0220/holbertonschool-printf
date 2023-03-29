@@ -32,6 +32,7 @@ num += printf("%i", va_arg(argumentos, int));
 break;
 case '%':
 _putchar(37);
+num = 1;
 break;
 default:
 _putchar(37);
