@@ -1,6 +1,13 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include <limits.h>
+#include <unistd.h>
+#include <stdlib.h>
+int _putchar(char c)
+{
+  return (write(1, &c, 1));
+}
 /**
  * print_char - prints a character
  * @arg: character to print
@@ -61,7 +68,7 @@ int print_int(va_list arg)
 		len += _putchar('-');
 		if (n == INT_MIN)
 		{
-			_write("2147483648", 10);
+			printf("2147483648");
 			return (10);
 		}
 		n = -n;

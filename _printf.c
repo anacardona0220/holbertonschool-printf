@@ -16,11 +16,6 @@ int _printf(const char *format, ...)
         {"%", print_percent},
         {"i", print_int},
         {"d", print_int},
-        {"u", print_unsigned},
-        {"o", print_octal},
-        {"x", print_hex},
-        {"X", print_HEX},
-        {"b", print_binary},
         {NULL, NULL}
     };
   va_start(args, format);
