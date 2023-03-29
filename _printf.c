@@ -10,26 +10,12 @@ int _printf(const char *format, ...)
 {
 va_list args;
 int i = 0, j = 0, count = 0;
-    format_t f_list[] = {
-        {"c", print_char},
-        {"s", print_str},
-        {"%", print_percent},
-        {"i", print_int},
-        {"d", print_int},
-        {NULL, NULL}
-    };
-  va_start(args, format);
- while (format && format[i])
-
-va_list args;
-int i = 0, j = 0, count = 0;
 format_t f_list[] = {
 {"c", print_char},
 {"s", print_str},
 {"%", print_percent},
 {"i", print_int},
 {"d", print_int},
-{"u", print_unsigned},
 {NULL, NULL}
 };
 va_start(args, format);
@@ -53,7 +39,6 @@ if (!f_list[j].type)
 putchar(format[i]);
 count++;
 }
-}
 else
 {
 putchar(format[i]);
@@ -63,4 +48,5 @@ i++;
 }
 va_end(args);
 return (count);
+}
 }
