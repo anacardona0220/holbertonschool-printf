@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-int num; data_t fn[] = {
+int num; changing_t fn[] = {
 {"c", p_c},
 {"s", p_s},
 {"%", p_p},
