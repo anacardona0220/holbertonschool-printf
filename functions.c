@@ -4,18 +4,13 @@
 #include <stdarg.h>
 #include <stdlib.h>
 /**
- * p_d - its used to print integer and decimal
+ * print_numberDI - its used to print integer and decimal
  * @args: parameter
  *
  *
  * Return: 0
-*/
-int p_d_i(va_list list)
-{
-int nLength;
-nLength = print_numberDI(list);
-return (nLength);
-}
+ */
+
 int print_numberDI(va_list args)
 {
 int n, length, div;
@@ -25,7 +20,7 @@ div = 1;
 length = 0;
 if (n < 0)
 {
-length += _putcharb('-');
+length += _putcharf('-');
 num = n * -1;
 }
 else
@@ -38,26 +33,54 @@ div *= 10;
 }
 for (; div != 0;)
 {
-length += _putcharb('0' + num / div);
+length += _putcharf('0' + num / div);
 num %= div;
 div /= 10;
 }
 return (length);
 }
-int p_s(va_list list)
+
+
+/**
+ * print_decimal_integer - Prints an integer
+ * @list: list of arguments
+ * Return: Will return the amount of characters printed.
+ */
+int print_decimal_integer(va_list list)
 {
-int i;
-char *str;
-str = va_arg(list, char *);
-if (str == NULL)
-str = "(null)";
-for (i = 0; str[i] != '\0'; i++)
-_putcharb(str[i]);
-return (i);
+int nLength;
+nLength = print_numberDI(list);
+return (nLength);
 }
-int p_p(__attribute__((unused))va_list list)
+
+/**
+ * print_char - writes strings
+ * @list: parameter
+ *
+ * Return: 0
+ *
+ */
+
+int print_char(va_list list)
 {
-_putcharb('%');
+_putcharf(va_arg(list, int));
 return (1);
 }
 
+/**
+ * print_string - Prints a string
+ * @list: list of arguments
+ * Return: Will return the amount of characters printed.
+ */
+int print_string(va_list list)
+{
+	int i;
+	char *str;
+
+	str = va_arg(list, char *);
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i] != '\0'; i++)
+		_putcharf(str[i]);
+	return (i);
+}
