@@ -4,23 +4,17 @@
 /**
  * _printf - produces output according to a format.
  * @format: character string
- * Return: number of characters printed (excluding the null byte used to end output to strings)
+ * Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {
 va_list args;
 int i = 0, j = 0, count = 0;
 format_t f_list[] = {
-{"c", print_char},
-{"s", print_str},
-{"%", print_percent},
-{"i", print_int},
-{"d", print_int},
-{NULL, NULL}
+{"c", print_char},{"s", print_str},{"%", print_percent},{"i", print_int},{"d", print_int},{NULL, NULL}
 };
 va_start(args, format);
 while (format && format[i])
-
 {
 if (format[i] == '%')
 {
