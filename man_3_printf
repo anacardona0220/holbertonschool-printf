@@ -1,35 +1,59 @@
 .TH _PRINTF "30" "March 2023" "version 1.0" "User Commands"
 .SH NAME
-_printf Esto ................................ PARA QUE SIRVE PRINT F 
+_printf The "printf" command is used in programming languages such as C to print data to the console or to a file.
+It allows the programmer to output information to the user, such as the results of a calculation, the contents of a variable,
+or a message indicating the status of the program.
+
 .SH SYNOPSIS
 \fB#include <stdio.h>\fP
 \fBint _printf(const char *format, ...);\fP
 .SH DESCRIPTION
-\fB_printf\fP ........................................PARA QUE SIRVE LA FUNCION PRINF
-\fBformat\fP .......................... para que sirve el parametro format
+\fB_printf\fP The printf function in C programming language is used to print formatted output to the standard output stream
+(usually the console or terminal). The function takes a format string and additional arguments that correspond to the format 
+specifiers in the format string.
 
-estos son los especificadores que trae la funcion print(parametros):
+Here is an example of using the printf function to print a formatted string to the standard output stream:
+\fBformat\fP The format string is a string literal that contains zero or more conversion specifiers, each starting with the 
+percent (%) character, which specify how the additional arguments should be formatted and printed. 
+
+These are the specifiers provided by the print(parameters) function:
+
 .TP
 \fB%c\fP
-para que sirve %C
+In the printf function, the %C format specifier is used to print a wide character or Unicode character.
+A wide character is a type of character data that can represent a larger set of characters than the 
+standard ASCII character set, including non-Latin characters used in many languages. 
+
 .TP
 \fB%s\fP
-para que sirve %C
-.TP
-\fB%i\fP
-para que sirve %C
+In the printf function, the %s format specifier is used to print a string, which is a sequence of characters
+terminated by a null character ('\0').
+
 .TP
 \fB%d\fP
-para que sirve %C
+Note that the %d format specifier is used with the printf function, which is used to print formatted output to the 
+standard output stream. The printf function takes a format string as its first argument, which contains format specifiers
+that correspond to the additional arguments passed to the function. The %d format specifier is used to print an integer, 
+and expects the corresponding argument to be an integer value.
+
+.TP
+\fB%i\fP
+The %i format specifier behaves similarly to the %d format specifier. The main difference is that %i can be used to print the 
+integer value in octal or hexadecimal format depending on the value itself and the use of the # flag. 
+If the value is preceded by 0 (zero), the value is printed in octal format, and if it is preceded by 0x or 0X, the value is printed
+in hexadecimal format.
+
 .TP
 \fB%\fP
-para que sirve %C
+En C, el carácter % no es una expresión en sí mismo, pero se utiliza como especificador de formato en varias funciones como printf, scanf y sprintf. 
+El carácter % se utiliza para indicar que le sigue un especificador de formato, que especifica cómo debe imprimirse o leerse el valor.
 
 .SH RETURN VALUE
-\fB_printf\fP en este renglon explico que valor retorna esta funcion
+\fB_printf\fP The function returns the number of characters written to the output stream.
 
 .SH EXAMPLES
-imprime una cadena
+Prints a string of characters
+
 .pp
 #include <stdio.h>
 int main() {
@@ -38,6 +62,8 @@ int main() {
 }
 
 .SH NOTES
-adicionar algo del printf
+The "printf" command can format the output in various ways, such as specifying the number of decimal places
+for a floating-point number or printing a string with a specific width.
+
 .SH AUTHORS
 Carlos Alfredo Montoya y Ana Maria Cardona
