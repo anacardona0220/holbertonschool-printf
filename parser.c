@@ -13,26 +13,14 @@
  * Return: A total count of the characters printed.
  */
 int parser(const char *format, data_t f_list[], va_list arg_list)
-  
 {
-  
-  int k, j, newVal, printData;
-  
-
-  
-  printData = 0;
-  
-  for (k = 0; format[k] != '\0'; k++)
-    
-    {
-      
-      if (format[k] == '%')
-	
-	{
-	  
-
-	  
-	  for (j = 0; f_list[j].rm != NULL; j++)
+int k, j, newVal, printData;
+printData = 0;
+for (k = 0; format[k] != '\0'; k++)
+{
+if (format[k] == '%')
+{
+for (j = 0; f_list[j].rm != NULL; j++)
 	    
 	    {
 	      

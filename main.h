@@ -6,7 +6,12 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
-
+/**
+ * struct data - Typedef struct
+ *@rm: parameter
+ * @type: data_t
+ * @f: The function associated
+ **/
 typedef struct data
 {
 char *rm;
