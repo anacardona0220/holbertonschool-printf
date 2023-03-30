@@ -47,3 +47,23 @@ Se verifica si la cadena es nula (es decir, si el valor de la variable cadena es
 }
 Finalmente, se devuelve la cantidad de caracteres que se imprimieron.
 
+int print_percent(_attribute_((unused))va_list list)
+Esta línea define la función print_percent. La función tiene como argumento list de tipo va_list. va_list es un tipo de datos en C 
+que se utiliza para trabajar con argumentos de longitud variable.
+
+_attribute_((unused)) es un atributo que se utiliza para indicar al compilador que la variable list no se usa en la función.
+  
+{
+  
+  _putcharf('%');
+  return (1);
+  
+}
+Este es el cuerpo de la función. La función print_percent simplemente llama a la función _putcharf para imprimir el carácter '%' en la consola 
+y devuelve el valor 1.
+
+_putcharf('%') es una función que imprime un carácter en la consola. En este caso, la función imprime el carácter '%' en la consola.
+
+return (1) indica que la función devuelve el valor 1. El valor de retorno se puede utilizar en otras partes del programa para tomar 
+decisiones o realizar cálculo.
+
