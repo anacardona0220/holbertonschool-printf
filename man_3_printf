@@ -24,6 +24,7 @@ y errno se establece apropiadamente por la llamada al sistema write().
 
 3. Fn print_string()
 int print_string(va_list list)
+
 {
   int k;
   char *cadena;
@@ -47,11 +48,13 @@ Se verifica si la cadena es nula (es decir, si el valor de la variable cadena es
 }
 Finalmente, se devuelve la cantidad de caracteres que se imprimieron.
 
+4. Fn print_percent()
 int print_percent(_attribute_((unused))va_list list)
-Esta línea define la función print_percent. La función tiene como argumento list de tipo va_list. va_list es un tipo de datos en C 
+Se  define la función print_percent. La función tiene como argumento list de tipo va_list. va_list es un tipo de datos en C 
 que se utiliza para trabajar con argumentos de longitud variable.
 
-_attribute_((unused)) es un atributo que se utiliza para indicar al compilador que la variable list no se usa en la función.
+_attribute_((unused)) 
+Es un atributo que se utiliza para indicar al compilador que la variable list no se usa en la función.
   
 {
   
