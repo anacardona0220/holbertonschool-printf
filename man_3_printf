@@ -46,6 +46,7 @@ Se verifica si la cadena es nula (es decir, si el valor de la variable cadena es
     _putcharf(cadena[k]);
     return (k);
 }
+
 Finalmente, se devuelve la cantidad de caracteres que se imprimieron.
 
 4. Fn print_percent()
@@ -62,6 +63,7 @@ Es un atributo que se utiliza para indicar al compilador que la variable list no
   return (1);
   
 }
+
 Este es el cuerpo de la función. La función print_percent simplemente llama a la función _putcharf para imprimir el carácter '%' en la consola 
 y devuelve el valor 1.
 
