@@ -8,6 +8,6 @@
 */
 int print_char(va_list list)
 {
-_putcharf(va_arg(list, int));
+_putcharb(va_arg(list, int));
 return (1);
 }

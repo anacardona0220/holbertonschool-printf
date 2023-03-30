@@ -6,6 +6,6 @@
 */
 int print_percent(__attribute__((unused))va_list list)
 {
-_putcharf('%');
+_putcharb('%');
 return (1);
 }

@@ -18,7 +18,7 @@ typedef struct data
 char *parameter;
 int (*f)(va_list);
 } data_t;
-int _putcharf(char c);
+int _putcharb(char c);
 int parser(const char *format, data_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
 int print_char(va_list);

@@ -35,8 +35,8 @@ if (f_list[j].parameter == NULL && format[k + 1] != ' ')
 {
 if (format[k + 1] != '\0')
 {
-_putcharf(format[k]);
-_putcharf(format[k + 1]);
+_putcharb(format[k]);
+_putcharb(format[k + 1]);
 printData = printData + 2;
 }
 else
@@ -46,7 +46,7 @@ k = k + 1;
 }
 else
 {
-_putcharf(format[k]);
+_putcharb(format[k]);
 printData++;
 }
 }

@@ -15,7 +15,7 @@ division = 1;
 sizeArgs = 0;
 if (res < 0)
 {
-sizeArgs += _putcharf('-');
+sizeArgs += _putcharb('-');
 num = res * -1;
 }
 else
@@ -28,7 +28,7 @@ division *= 10;
 }
 for (; division != 0;)
 {
-sizeArgs += _putcharf('0' + num / division);
+sizeArgs += _putcharb('0' + num / division);
 num %= division;
 division /= 10;
 }

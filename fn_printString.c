@@ -12,6 +12,6 @@ cadena = va_arg(list, char *);
 if (cadena == NULL)
 cadena = "(null)";
 for (k = 0; cadena[k] != '\0'; k++)
-_putcharf(cadena[k]);
+_putcharb(cadena[k]);
 return (k);
 }
