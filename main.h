@@ -19,5 +19,6 @@ int _printf(const char *format, ...);
 int print_char(va_list);
 int print_string(va_list);
 int print_percent(va_list);
+int print_numbers(va_list args);
 int print_decimal_integer(va_list);
 #endif
