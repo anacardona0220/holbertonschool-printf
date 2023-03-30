@@ -6,14 +6,8 @@
 * Return: 0
 *
 */
-
-
-
 int print_char(va_list list)
-  
 {
-  
-  _putcharf(va_arg(list, int));
-  
-  return (1);
- }      
+_putcharf(va_arg(list, int));
+return (1);
+}
