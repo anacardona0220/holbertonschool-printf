@@ -72,3 +72,46 @@ _putcharf('%') es una función que imprime un carácter en la consola. En este c
 return (1) indica que la función devuelve el valor 1. El valor de retorno se puede utilizar en otras partes del programa para tomar 
 decisiones o realizar cálculo.
 
+5. Fn 
+int print_numberDI(va_list args)
+Esta línea define la función print_numberDI. La función tiene como argumento args, que es una lista de argumentos variables de tipo va_list. También declara tres variables enteras: n, length, y div y una variable sin signo llamada num.
+{
+int n, length, div;
+unsigned int num;
+n = va_arg(args, int);
+div = 1;
+length = 0;
+en este cuerpo de la función, n, length y div se inicializan en 0. num no se inicializa aquí.
+n = va_arg(args, int) es una función que toma el siguiente argumento de la lista args y lo guarda en la variable n. Este argumento debe ser un entero.
+div = 1 inicializa la variable div en 1. div se utiliza más adelante en la función.
+if (n < 0)
+{
+length += _putcharf('-');
+num = n * -1;
+}
+else
+{
+num = n;
+}
+Esta sección comprueba si el número n es negativo. Si es así, se imprime un carácter de menos ("-") en la consola usando la función _putcharf. También se establece num en el valor absoluto de n. Si n es positivo, se establece num en el valor de n. El valor de retorno length se actualiza para incluir el carácter '-' si es necesario.
+for (; num / div > 9;)
+{
+div *= 10;
+}
+Este es un bucle que calcula el divisor necesario para obtener el primer dígito en el número num. El bucle continúa multiplicando div por 10 hasta que num dividido por div sea menor o igual a 9.
+for (; div != 0;)
+{
+length += _putcharf('0' + num / div);
+num %= div;
+div /= 10;
+}
+Este es un segundo bucle que imprime los dígitos del número num en la consola. En cada iteración, el bucle imprime el dígito correspondiente al cociente de num dividido por div, y luego actualiza num y div para continuar con el siguiente dígito. div se divide por 10 en cada iteración para avanzar al siguiente dígito.
+
+'0' + num / div es una forma de convertir el valor numérico de un dígito en un carácter ASCII. Como los códigos ASCII para los dígitos 0-9 son consecutivos, sumar '0' a un valor numérico produce el carácter ASCII correspondiente. Por ejemplo, si num / div es igual a 2, entonces '0' + num / div será igual a '2'.
+
+length += _putcharf('0' + num / div) actualiza la variable length para contar el número de caracteres que se imprimen en la consola.
+return (length);
+}
+Sí, por supuesto. La última línea de la función print_numberDI es return (length);. Esto significa que la función devuelve el valor de la variable length como su resultado. La variable length se actualiza en cada iteración del segundo bucle para contar el número de caracteres que se imprimen en la consola, incluyendo el carácter de signo negativo si el número es negativo. Por lo tanto, el valor de retorno de esta función será el número de caracteres que se imprimieron en la consola para representar el número dado. Este valor puede ser útil para otras partes 
+del programa que llamen a la función print_numberDI, por ejemplo, para calcular la longitud total de una cadena de caracteres que incluye este número.
+
