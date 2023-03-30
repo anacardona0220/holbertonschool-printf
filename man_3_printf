@@ -1,215 +1,43 @@
-1. Fn _printf()
-#include "main.h" - Esto incluye el archivo de encabezado main.h que probablemente contiene los prototipos de las funciones utilizadas
-en el archivo fuente.
+.TH _PRINTF "30" "March 2023" "version 1.0" "User Commands"
+.SH NAME
+_printf Esto ................................ PARA QUE SIRVE PRINT F 
+.SH SYNOPSIS
+\fB#include <stdio.h>\fP
+\fBint _printf(const char *format, ...);\fP
+.SH DESCRIPTION
+\fB_printf\fP ........................................PARA QUE SIRVE LA FUNCION PRINF
+\fBformat\fP .......................... para que sirve el parametro format
 
-#include <unistd.h> - Esto incluye el archivo de encabezado unistd.h que contiene prototipos de funciones relacionadas con llamadas al 
-sistema, como la función write() que se utiliza en esta implementación.
+estos son los especificadores que trae la funcion print(parametros):
+.TP
+\fB%c\fP
+para que sirve %C
+.TP
+\fB%s\fP
+para que sirve %C
+.TP
+\fB%i\fP
+para que sirve %C
+.TP
+\fB%d\fP
+para que sirve %C
+.TP
+\fB%\fP
+para que sirve %C
 
-2. Fn _putchar()
-int _putcharf(char c)
-La función _putchar() se define con un argumento char c.
+.SH RETURN VALUE
+\fB_printf\fP en este renglon explico que valor retorna esta funcion
 
-{
-  return (write(1, &c, 1));
+.SH EXAMPLES
+imprime una cadena
+.pp
+#include <stdio.h>
+int main() {
+    printf("hola mundo\n");
+    return 0;
 }
 
-return (write(1, &c, 1));  
-Esta línea es la implementación real de la función _putchar(). En ella, se llama a la función del sistema write() 
-para escribir el carácter c en la salida estándar. El primer argumento 1 indica que se escribirá en la salida estándar 
-(el descriptor de archivo 1). El segundo argumento &c es un puntero a la dirección de memoria del carácter c.
-El tercer argumento 1 indica cuántos bytes se escribirán.
-
-La función devuelve 1 en caso de éxito, lo que indica que se ha escrito un carácter en la salida estándar. En caso de error, devuelve -1, 
-y errno se establece apropiadamente por la llamada al sistema write().
-
-3. Fn print_string()
-int print_string(va_list list)
-
-{
-  int k;
-  char *cadena;
-
-Se define la función print_string que toma un argumento list de tipo va_list y devuelve un entero. También se definen las variables k de tipo int 
-y cadena de tipo char*.
-
-  cadena = va_arg(list, char *);
-
-Se llama a la función va_arg para obtener el siguiente argumento de la lista de argumentos. En este caso, se espera que el siguiente argumento 
-sea una cadena de caracteres y se asigna a la variable cadena.
-
-  if (cadena == NULL)
-     cadena = "(null)";
-
-Se verifica si la cadena es nula (es decir, si el valor de la variable cadena es NULL). Si es así, se asigna la cadena "(null)" a la variable cadena.
-
-  for (k = 0; cadena[k] != '\0'; k++)
-    _putcharf(cadena[k]);
-    return (k);
-}
-
-Finalmente, se devuelve la cantidad de caracteres que se imprimieron.
-
-4. Fn print_percent()
-int print_percent(_attribute_((unused))va_list list)
-Se  define la función print_percent. La función tiene como argumento list de tipo va_list. va_list es un tipo de datos en C 
-que se utiliza para trabajar con argumentos de longitud variable.
-
-_attribute_((unused)) 
-Es un atributo que se utiliza para indicar al compilador que la variable list no se usa en la función.
-  
-{
-  
-  _putcharf('%');
-  return (1);
-  
-}
-
-Este es el cuerpo de la función. La función print_percent simplemente llama a la función _putcharf para imprimir el carácter '%' en la consola 
-y devuelve el valor 1.
-
-_putcharf('%') es una función que imprime un carácter en la consola. En este caso, la función imprime el carácter '%' en la consola.
-
-return (1) indica que la función devuelve el valor 1. El valor de retorno se puede utilizar en otras partes del programa para tomar 
-decisiones o realizar cálculo.
-
-5. Fn print_numbers()
-int print_numbers(va_list args)
-Esta línea define la función print_numbers. La función tiene como argumento args, que es una lista de argumentos variables de tipo va_list.
-También declara tres variables enteras: n, length, y div y una variable sin signo llamada num.
-
-{
-int n, length, div;
-unsigned int num;
-n = va_arg(args, int);
-div = 1;
-length = 0;
-en este cuerpo de la función, n, length y div se inicializan en 0. num no se inicializa aquí.
-n = va_arg(args, int) es una función que toma el siguiente argumento de la lista args y lo guarda en la variable n. 
-Este argumento debe ser un entero.
-
-div = 1 
-inicializa la variable div en 1. div se utiliza más adelante en la función.
-
-if (n < 0)
-{
-length += _putcharf('-');
-num = n * -1;
-}
-else
-{
-num = n;
-}
-Esta sección comprueba si el número n es negativo. Si es así, se imprime un carácter de menos ("-") en la consola usando la función _putcharf. 
-También se establece num en el valor absoluto de n. Si n es positivo, se establece num en el valor de n. El valor de retorno length se actualiza
-para incluir el carácter '-' si es necesario.
-
-for (; num / div > 9;)
-{
-div *= 10;
-}
-Este es un bucle que calcula el divisor necesario para obtener el primer dígito en el número num. El bucle continúa multiplicando div por 10
-hasta que num dividido por div sea menor o igual a 9.
-
-for (; div != 0;)
-{
-length += _putcharf('0' + num / div);
-num %= div;
-div /= 10;
-}
-Este es un segundo bucle que imprime los dígitos del número num en la consola. En cada iteración, el bucle imprime el dígito correspondiente 
-al cociente de num dividido por div, y luego actualiza num y div para continuar con el siguiente dígito. div se divide por 10 en cada iteración
-para avanzar al siguiente dígito.
-
-'0' + num / div 
-Es una forma de convertir el valor numérico de un dígito en un carácter ASCII. Como los códigos ASCII para los dígitos 0-9
-son consecutivos, sumar '0' a un valor numérico produce el carácter ASCII correspondiente. Por ejemplo, si num / div es igual a 2, entonces
-
-'0' + num / div será igual a '2'.
-length += _putcharf('0' + num / div)
-Actualiza la variable length para contar el número de caracteres que se imprimen en la consola.
-
-return (length);
-}
-Sí, por supuesto. La última línea de la función print_numbers es return (length);. Esto significa que la función devuelve el valor de la 
-variable length como su resultado. La variable length se actualiza en cada iteración del segundo bucle para contar el número de caracteres
-que se imprimen en la consola, incluyendo el carácter de signo negativo si el número es negativo. Por lo tanto, el valor de retorno de esta
-función será el número de caracteres que se imprimieron en la consola para representar el número dado. Este valor puede ser útil para otras 
-partes del programa que llamen a la función print_numberDI, por ejemplo, para calcular la longitud total de una cadena de caracteres que
-incluye este número.
-
-6. Fn 
-int parser(const char *format, changing_t f_list[], va_list arg_list)
-{
-	int i, j, r_val, printed_chars;
-Esta es una definición de una función llamada parser. La función toma una cadena de formato (format), una lista de estructuras changing_t (f_list) 
-y una lista de argumentos (arg_list) como argumentos, y devuelve un entero.
-
-	printed_chars = 0;
-
-Inicializa la variable printed_chars con el valor 0. Esta variable se utiliza para realizar un seguimiento del número total de caracteres impresos.
-
-	for (i = 0; format[i] != '\0'; i++)
-
-Este es un bucle for que itera a través de la cadena de formato format hasta que se encuentra el carácter nulo \0. Cada iteración procesará un 
-carácter de la cadena de formato.
-	{
-		if (format[i] == '%')
- Esta sentencia comprueba si el carácter actual de la cadena de formato es un carácter de formato, indicado por el símbolo %.
-		{
-			
-			for (j = 0; f_list[j].rm != NULL; j++)
-			{
-				if (format[i + 1] == f_list[j].rm[0])
-				{
-					r_val = f_list[j].f(arg_list);
-					if (r_val == -1)
-						return (-1);
-					printed_chars += r_val;
-					break;
-				}
-			}
-
-Si el carácter actual de la cadena de formato es un carácter de formato, este bucle itera a través de la lista de estructuras changing_t hasta 
-que encuentra la estructura correspondiente al carácter de formato. Luego, llama a la función asociada a esa estructura y le pasa la lista de 
-argumentos arg_list. Si la función devuelve -1, la función parser también devuelve -1. De lo contrario, la función parser agrega el valor devuelto 
-por la función al número total de caracteres impresos y sale del bucle.
-			if (f_list[j].rm == NULL && format[i + 1] != ' ')
-			{
-				if (format[i + 1] != '\0')
-				{
-					_putcharf(format[i]);
-					_putcharf(format[i + 1]);
-					printed_chars = printed_chars + 2;
-				}
-				else
-					return (-1);
-			}
-Si el carácter actual de la cadena de formato no coincide con ningún carácter de formato conocido, esta sentencia comprueba si el siguiente carácter
-tampoco es un carácter de formato válido. Si es así, la función devuelve -1. De lo contrario, la función imprime los dos caracteres (% y el siguiente 
-carácter) y agrega 2 al número total de caracteres impresos.
-
-Esta sentencia actualiza el contador i para que salte el carácter de formato actual y se mueva al siguiente carácter en la cadena de formato.			
-i = i + 1;
-
-		}
-		else
-		{
-			_putcharf(format[i]); /*call the write function*/
-			printed_chars++;
-		}
-Si el carácter actual de la cadena de formato no es
-	}
-	return (printed_chars);
-}
-El return que se encuentra al final de la función parser es el valor que se devuelve cuando la función ha terminado de procesar la cadena de 
-formato y ha llamado a todas las funciones correspondientes a los especificadores de formato encontrados en la cadena.
-
-En este caso, la función parser lleva un contador llamado printed_chars, que se incrementa cada vez que se escribe un carácter en la salida estándar.
-El return al final de la función devuelve el valor actual de printed_chars, que es la cantidad total de caracteres escritos en la salida estándar
-durante la ejecución de la función parser.
-
-En otras palabras, el return (printed_chars) devuelve el número total de caracteres que se han escrito en la salida estándar durante la ejecución de 
-la función parser. Este valor puede ser útil para determinar si la función parser ha escrito la cantidad correcta de caracteres, o para realizar 
-alguna otra tarea que dependa del número total de caracteres escritos.
-
-
+.SH NOTES
+adicionar algo del printf
+.SH AUTHORS
+Carlos Alfredo Montoya y Ana Maria Cardona
