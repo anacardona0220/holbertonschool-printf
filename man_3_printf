@@ -1,0 +1,4 @@
+Fn _printf()
+#include "main.h" - Esto incluye el archivo de encabezado main.h que probablemente contiene los prototipos de las funciones utilizadas en el archivo fuente.
+
+#include <unistd.h> - Esto incluye el archivo de encabezado unistd.h que contiene prototipos de funciones relacionadas con llamadas al sistema, como la función write() que se utiliza en esta implementación.
