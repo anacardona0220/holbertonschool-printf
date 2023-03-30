@@ -46,14 +46,10 @@ i = i + 1;
 }
 else
 {
-_putcharf(format[i]); /*call the write function*/
+_putcharf(format[i]);
 printed_chars++;
 }
 }
 return (printed_chars);
 }
-int print_percent(__attribute__((unused))va_list list)
-{
-_putcharf('%');
-return (1);
-}
+
