@@ -15,23 +15,26 @@ La función _putchar() se define con un argumento char c.
 
 return (write(1, &c, 1));  
 Esta línea es la implementación real de la función _putchar(). En ella, se llama a la función del sistema write() 
-para escribir el carácter c en la salida estándar. El primer argumento 1 indica que se escribirá en la salida estándar (el descriptor de archivo 1). El segundo argumento &c es un puntero a la dirección de memoria del carácter c. El tercer argumento 1 indica cuántos bytes se escribirán.
+para escribir el carácter c en la salida estándar. El primer argumento 1 indica que se escribirá en la salida estándar 
+(el descriptor de archivo 1). El segundo argumento &c es un puntero a la dirección de memoria del carácter c.
+El tercer argumento 1 indica cuántos bytes se escribirán.
 
 La función devuelve 1 en caso de éxito, lo que indica que se ha escrito un carácter en la salida estándar. En caso de error, devuelve -1, 
 y errno se establece apropiadamente por la llamada al sistema write().
 
 3. Fn print_string()
-
 int print_string(va_list list)
 {
-    int k;
-    char *cadena;
+   int k;
+   char *cadena;
 
-Se define la función print_string que toma un argumento list de tipo va_list y devuelve un entero. También se definen las variables k de tipo int y cadena de tipo char*.
+Se define la función print_string que toma un argumento list de tipo va_list y devuelve un entero. También se definen las variables k de tipo int 
+y cadena de tipo char*.
 
     cadena = va_arg(list, char *);
 
-Se llama a la función va_arg para obtener el siguiente argumento de la lista de argumentos. En este caso, se espera que el siguiente argumento sea una cadena de caracteres y se asigna a la variable cadena.
+Se llama a la función va_arg para obtener el siguiente argumento de la lista de argumentos. En este caso, se espera que el siguiente argumento 
+sea una cadena de caracteres y se asigna a la variable cadena.
 
     if (cadena == NULL)
         cadena = "(null)";
