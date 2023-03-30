@@ -25,24 +25,24 @@ y errno se establece apropiadamente por la llamada al sistema write().
 3. Fn print_string()
 int print_string(va_list list)
 {
-   int k;
-   char *cadena;
+  int k;
+  char *cadena;
 
 Se define la función print_string que toma un argumento list de tipo va_list y devuelve un entero. También se definen las variables k de tipo int 
 y cadena de tipo char*.
 
-    cadena = va_arg(list, char *);
+  cadena = va_arg(list, char *);
 
 Se llama a la función va_arg para obtener el siguiente argumento de la lista de argumentos. En este caso, se espera que el siguiente argumento 
 sea una cadena de caracteres y se asigna a la variable cadena.
 
-    if (cadena == NULL)
-        cadena = "(null)";
+  if (cadena == NULL)
+     cadena = "(null)";
 
 Se verifica si la cadena es nula (es decir, si el valor de la variable cadena es NULL). Si es así, se asigna la cadena "(null)" a la variable cadena.
 
-    for (k = 0; cadena[k] != '\0'; k++)
-        _putcharf(cadena[k]);
+  for (k = 0; cadena[k] != '\0'; k++)
+    _putcharf(cadena[k]);
     return (k);
 }
 Finalmente, se devuelve la cantidad de caracteres que se imprimieron.
