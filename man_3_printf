@@ -4,3 +4,11 @@ en el archivo fuente.
 
 #include <unistd.h> - Esto incluye el archivo de encabezado unistd.h que contiene prototipos de funciones relacionadas con llamadas al 
 sistema, como la función write() que se utiliza en esta implementación.
+
+La función _putchar() se define con un argumento char c.
+
+return (write(1, &c, 1)); - Esta línea es la implementación real de la función _putchar(). En ella, se llama a la función del sistema write() 
+para escribir el carácter c en la salida estándar. El primer argumento 1 indica que se escribirá en la salida estándar (el descriptor de archivo 1). El segundo argumento &c es un puntero a la dirección de memoria del carácter c. El tercer argumento 1 indica cuántos bytes se escribirán.
+
+La función devuelve 1 en caso de éxito, lo que indica que se ha escrito un carácter en la salida estándar. En caso de error, devuelve -1, 
+y errno se establece apropiadamente por la llamada al sistema write().
