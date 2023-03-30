@@ -11,7 +11,7 @@
  */
 int print_decimal_integer(va_list list)
 {
-int nLength;
-nLength = print_numbers(list);
-return (nLength);
+int sizeArg;
+sizeArg = print_numbers(list);
+return (sizeArg);
 }
