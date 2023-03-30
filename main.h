@@ -7,14 +7,14 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-typedef struct changing
+typedef struct data
 {
 char *rm;
 int (*f)(va_list);
-} changing_t;
+} data_t;
 
 int _putcharf(char c);
-int parser(const char *format, changing_t f_list[], va_list arg_list);
+int parser(const char *format, data_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
 int print_char(va_list);
 int print_string(va_list);

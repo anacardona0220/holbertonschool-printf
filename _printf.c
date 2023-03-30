@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 int printed_chars;
-changing_t f_list[] = {
+data_t f_list[] = {
 {"c", print_char},
 {"s", print_string},
 {"%", print_percent},
