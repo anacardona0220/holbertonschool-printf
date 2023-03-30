@@ -1,15 +1,16 @@
-Fn _printf()
+1. Fn _printf()
 #include "main.h" - Esto incluye el archivo de encabezado main.h que probablemente contiene los prototipos de las funciones utilizadas
 en el archivo fuente.
 
 #include <unistd.h> - Esto incluye el archivo de encabezado unistd.h que contiene prototipos de funciones relacionadas con llamadas al 
 sistema, como la función write() que se utiliza en esta implementación.
 
-1. int _putcharf(char c)
+2. Fn _putchar()
+int _putcharf(char c)
 La función _putchar() se define con un argumento char c.
 
 {
-		return (write(1, &c, 1));
+  return (write(1, &c, 1));
 }
 
 return (write(1, &c, 1));  
