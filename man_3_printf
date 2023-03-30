@@ -66,4 +66,4 @@ The "printf" command can format the output in various ways, such as specifying t
 for a floating-point number or printing a string with a specific width.
 
 .SH AUTHORS
-Carlos Alfredo Montoya y Ana Maria Cardona
+Carlos Alfredo Montoya and Ana Maria Cardona
