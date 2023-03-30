@@ -8,7 +8,7 @@
  * parser - Receives the main string and all the necessary parameters to
  * print a formated string.
  * @format: A string containing all the desired characters.
- * @fn: A list of all the posible functions.
+ *@f_list: list functions
  * @arg_list: A list containing all the argumentents passed to the program.
  * Return: A total count of the characters printed.
  */
@@ -20,9 +20,9 @@ for (k = 0; format[k] != '\0'; k++)
 {
 if (format[k] == '%')
 {
-for (j = 0; f_list[j].rm != NULL; j++)
+for (j = 0; f_list[j].parameter != NULL; j++)
 {
-if (format[k + 1] == f_list[j].rm[0])
+if (format[k + 1] == f_list[j].parameter[0])
 {
 newVal = f_list[j].f(arg_list);
 if (newVal == -1)
@@ -31,7 +31,7 @@ printData += newVal;
 break;
 }
 }
-if (f_list[j].rm == NULL && format[k + 1] != ' ')
+if (f_list[j].parameter == NULL && format[k + 1] != ' ')
 {
 if (format[k + 1] != '\0')
 {
@@ -42,11 +42,11 @@ printData = printData + 2;
 else
 return (-1);
 }
-k = k + 1; /*Updating i to skip format symbols*/
+k = k + 1;
 }
 else
 {
-_putcharf(format[k]); /*call the write function*/
+_putcharf(format[k]);
 printData++;
 }
 }

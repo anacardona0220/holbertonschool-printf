@@ -8,16 +8,16 @@
 #include <stdlib.h>
 /**
  * struct data - Typedef struct
- *@rm: parameter
+ * @parameter: parameter
  * @type: data_t
+ * va_list - value list
  * @f: The function associated
  **/
 typedef struct data
 {
-char *rm;
+char *parameter;
 int (*f)(va_list);
 } data_t;
-
 int _putcharf(char c);
 int parser(const char *format, data_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
