@@ -45,3 +45,19 @@ Development:
 Create a man page for your function.
 
 Create a man file for the function. man 3 printf
+
+
+
+Examples of use _printF():
+Print a string of characters: 
+_printf("Hola, mundo!\n");
+
+int edad = 25;
+_printf("Tengo %d años.\n", edad);
+
+float altura = 1.75;
+_printf("Mi altura es %f metros.\n", altura);
+
+char letra = 'a';
+printf("La letra es %c.\n", letra);
+
